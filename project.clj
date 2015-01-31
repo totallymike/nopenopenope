@@ -17,16 +17,20 @@
   :ring {:handler modern-cljs.core/handler}
   ;; cljsbuild options configuration
   :cljsbuild {
-     :builds [{
-       ;; CLJS source path
-       :source-paths ["src/cljs"]
+              :builds
+              [{
+                ;; CLJS source path
+                :source-paths
+                ["src/cljs"]
 
-       ;; Google Closure (CLS) options configuration
-       :compiler {;; CLS generated JS filename
-                  :output-to "resources/public/js/modern.js"
-
-                  :foreign-libs
-                  [{:file "src/js/jquery.js"
+                ;; Google Closure (CLS) options configuration
+                :compiler
+                {;; CLS generated JS filename
+                 :output-dir "resources/public/js"
+                 :output-to "modern.js"
+                 :source-map true
+                 :foreign-libs
+                 [{:file "src/js/jquery.js"
                     :provides ["jquery"]}
                    {:file "src/js/ember.js"
                     :provides ["ember"]}]
