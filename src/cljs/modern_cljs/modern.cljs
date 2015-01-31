@@ -2,7 +2,10 @@
   (:require [clojure.string :as string]
             [jquery] [ember]))
 
+;; set Ember as a variable so I don't have to
+;; type 'js/Ember' all the time.
 (def Ember js/Ember)
+
 (def HomeRoute
   (.extend (.-Route Ember)
     #js {:model
@@ -21,8 +24,12 @@
 
 (let [application (.create (.-Application Ember))
       router (.-Router application)]
+
+  ;; Attach route and component to the application
   (set! (.-HomeRoute application) HomeRoute)
   (set! (.-SmallComponentComponent application) SmallComponentComponent)
+
+  ;; Set up the router
   (.map router (fn []
                  (this-as r
                    (.route r "home" #js {:path "/"})
