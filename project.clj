@@ -13,16 +13,17 @@
   :plugins [[lein-cljsbuild "1.0.4"]]
 
   ;; cljsbuild options configuration
-  :cljsbuild {:builds
-              [{;; CLJS source path
-                :source-paths ["src/cljs"]
+  :cljsbuild {
+     :builds [{
+       ;; CLJS source path
+       :source-paths ["src/cljs"]
 
-                ;; Google Closure (CLS) options configuration
-                :compiler {;; CLS generated JS filename
-                           :output-to "resources/public/js/modern.js"
+       ;; Google Closure (CLS) options configuration
+       :compiler {;; CLS generated JS filename
+                  :output-to "resources/public/js/modern.js"
 
-                           ;; minimal js optimization
-                           :optimizations :whitespace
+                  ;; minimal js optimization
+                  :optimizations :whitespace
 
-                           :pretty-print true}}]})
+                  :pretty-print true}}]})
 
