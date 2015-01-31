@@ -12,10 +12,12 @@
 (def SmallComponentComponent
   (.extend (.-Component Ember)
     #js {:dynamicAttribute "foo"
+         :thing "123"
          :actions
          #js {:myAction
               (fn []
-                (.set js/this "dynamicAttribute" "bar"))}}))
+                (this-as this
+                 (.set this "dynamicAttribute" "abc")))}}))
 
 (let [application (.create (.-Application Ember))
       router (.-Router application)]
