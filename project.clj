@@ -15,6 +15,8 @@
             [lein-ring "0.9.1"]]
 
   :ring {:handler modern-cljs.core/handler}
+
+  :hooks [leiningen.cljsbuild]
   ;; cljsbuild options configuration
   :cljsbuild {
               :builds
@@ -26,16 +28,16 @@
                 ;; Google Closure (CLS) options configuration
                 :compiler
                 {;; CLS generated JS filename
+                 :output-to "resources/public/js/modern.js"
                  :output-dir "resources/public/js"
-                 :output-to "modern.js"
-                 :source-map true
+                 :source-map "resources/public/js/modern.js.map"
                  :foreign-libs
                  [{:file "src/js/jquery.js"
                     :provides ["jquery"]}
                    {:file "src/js/ember.js"
                     :provides ["ember"]}]
                   ;; minimal js optimization
-                  :optimizations :whitespace
+                 :optimizations :whitespace
 
-                  :pretty-print true}}]})
+                 :pretty-print true}}]})
 

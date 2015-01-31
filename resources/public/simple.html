@@ -9,7 +9,7 @@
     <script type="text/x-handlebars" data-template-name="home">
       <p>Oh my.. {{model}}</p>
 
-      {{small-component thing=bar}}
+      {{small-component thing="bar"}}
 
       {{link-to "Foo" 'foo'}}
     </script>
@@ -20,8 +20,8 @@
 
     <script type="text/x-handlebars" id="components/small-component">
       <p>Hey this component has a button.</p>
-      <p>And some dynamic content: {{dynamicAttribute}}</p>
-      <button {{bind-attr action=myAction}}>Click</button>
+      <p>And some dynamic content: {{dynamicAttribute}} {{thing}}</p>
+      <button {{action 'myAction'}}>Click</button>
     </script>
   </body>
 </html>
