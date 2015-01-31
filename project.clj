@@ -25,6 +25,11 @@
        :compiler {;; CLS generated JS filename
                   :output-to "resources/public/js/modern.js"
 
+                  :foreign-libs
+                  [{:file "src/js/jquery.js"
+                    :provides ["jquery"]}
+                   {:file "src/js/ember.js"
+                    :provides ["ember"]}]
                   ;; minimal js optimization
                   :optimizations :whitespace
 

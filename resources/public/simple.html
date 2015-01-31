@@ -6,6 +6,14 @@
   </head>
   <body>
     <script src="js/modern.js"></script>
+    <script type="text/x-handlebars" data-template-name="home">
+      <p>Oh my.. {{model}}</p>
+      {{link-to "Foo" 'foo'}}
+    </script>
+    <script type="text/x-handlebars" data-template-name="foo">
+      <p>Foo!</p>
+      {{link-to "Home" 'home'}}
+    </script>
   </body>
 </html>
 
